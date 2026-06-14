@@ -1,7 +1,64 @@
-echo ".venv/
+# === Python ===
+# Entorno virtual
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Archivos de Python compilados
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# === Sistema ===
 .DS_Store
+Thumbs.db
+
+# === Logs y datos temporales ===
 logs/
+*.log
 data/*.png
-data/*.csv" > .gitignore
+data/*.csv
+
+# === IDE/Editor ===
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === Archivos de configuración local ===
+.env
+.env.local
+.env*.local
+
+# === Archivos de dependencias (opcional) ===
+# Si usas pipenv o poetry, excluye sus archivos de lock (opcional)
+Pipfile.lock
+poetry.lock
+
+# === Archivos de datos sensibles ===
+# Excluye cualquier archivo con credenciales o datos privados
+*.json
+*.yml
+*.yaml
+!requirements.yml  # Excepción: si tienes un archivo de dependencias
+!config/*.yml      # Excepción: si tienes configuraciones no sensibles
