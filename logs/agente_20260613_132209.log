@@ -1,0 +1,27 @@
+2026-06-13 13:22:09,135 - INFO - Iniciando la ejecución del agente...
+2026-06-13 13:22:09,136 - INFO - Descargando datos de AAPL para el período 1y...
+2026-06-13 13:22:09,499 - INFO - Datos descargados: 251 registros.
+2026-06-13 13:22:09,500 - INFO - Calculando indicadores técnicos con TA-Lib...
+2026-06-13 13:22:09,514 - INFO - Indicadores calculados: SMA_20, RSI_14, MACD.
+2026-06-13 13:22:09,515 - INFO - Generando señales de compra/venta...
+2026-06-13 13:22:09,523 - ERROR - ❌ Error en la ejecución del agente: Operands are not aligned. Do `left, right = left.align(right, axis=1)` before operating.
+2026-06-13 13:22:09,529 - ERROR - Traceback: Traceback (most recent call last):
+  File "/home/chema/ProyectosPython/agente_inversion/scripts/agente.py", line 214, in main
+    data = generar_senales(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chema/ProyectosPython/agente_inversion/scripts/agente.py", line 121, in generar_senales
+    cond_compra_1 = (close > sma_20) & (rsi_14 < 30)
+                     ^^^^^^^^^^^^^^
+  File "/home/chema/ProyectosPython/agente_inversion/.venv/lib/python3.12/site-packages/pandas/core/ops/common.py", line 85, in new_method
+    return method(self, other)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/chema/ProyectosPython/agente_inversion/.venv/lib/python3.12/site-packages/pandas/core/arraylike.py", line 58, in __gt__
+    return self._cmp_method(other, operator.gt)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chema/ProyectosPython/agente_inversion/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 9135, in _cmp_method
+    self, other = self._align_for_op(other, axis, flex=False, level=None)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/chema/ProyectosPython/agente_inversion/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 9458, in _align_for_op
+    raise ValueError(
+ValueError: Operands are not aligned. Do `left, right = left.align(right, axis=1)` before operating.
+
