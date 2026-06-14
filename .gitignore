@@ -1,16 +1,7 @@
-# Entorno virtual
-.venv/
-
-# Archivos de Python compilados
+echo ".venv/
 __pycache__/
 *.py[cod]
-
-# Archivos de sistema
 .DS_Store
-Thumbs.db
-
-# Logs y datos temporales
-*.log
 logs/
 data/*.png
-data/*.csv
+data/*.csv" > .gitignore
