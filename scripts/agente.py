@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# o
 import yfinance as yf
 import pandas as pd
 import talib
@@ -8,11 +10,14 @@ import os
 import logging
 
 # Configuración de logging
+LOG_DIR = os.path.join(os.path.dirname(__file__), "logs")  # Ruta absoluta a la carpeta logs/
+os.makedirs(LOG_DIR, exist_ok=True)  # Crea la carpeta si no existe
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler(f"logs/agente_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"),
+        logging.FileHandler(os.path.join(LOG_DIR, f"agente_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log")),
         logging.StreamHandler()
     ]
 )
@@ -177,7 +182,7 @@ def graficar_datos(data: pd.DataFrame, ticker: str) -> None:
     plt.grid()
 
     plt.tight_layout()
-    plt.savefig(f"data/{ticker}_graph_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png")
+    plt.savefig(os.path.join(DATA_DIR, f"{ticker}_graph_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"))
     plt.show()
     logging.info(f"Gráfico guardado en: data/{ticker}_graph_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png")
 
