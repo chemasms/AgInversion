@@ -62,3 +62,4 @@ poetry.lock
 *.yaml
 !requirements.yml  # Excepción: si tienes un archivo de dependencias
 !config/*.yml      # Excepción: si tienes configuraciones no sensibles
+token.txt
