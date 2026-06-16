@@ -1,0 +1,31 @@
+{
+  "tickers": ["AAPL"],
+  "period": "1y",
+  "interval": "1d",
+  "data_dir": "../data",
+  "log_dir": "logs",
+  "notifications": {
+    "email": {
+      "enabled": false,
+      "smtp_server": "smtp.gmail.com",
+      "smtp_port": 587,
+      "sender_email": "tu_email@gmail.com",
+      "sender_password": "",
+      "receiver_email": "destinatario@example.com"
+    },
+    "console": true
+  },
+  "indicators": {
+    "sma_periods": [20, 50],
+    "rsi_period": 14,
+    "macd_fast": 12,
+    "macd_slow": 26,
+    "macd_signal": 9
+  },
+  "signals": {
+    "rsi_buy": 30,
+    "rsi_sell": 70,
+    "sma_crossover": true,
+    "macd_crossover": true
+  }
+}
